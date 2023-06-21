@@ -4,14 +4,14 @@ module.exports = {
       text: 'News',
       url: '/news'
     },
-    {
-      text: 'Events',
-      url: '#'
-    },
-    {
-      text: 'Teams',
-      url: '#'
-    },
+    // {
+    //   text: 'Events',
+    //   url: '#'
+    // },
+    // {
+    //   text: 'Teams',
+    //   url: '#'
+    // },
 
     {
       text: 'Gallery',
