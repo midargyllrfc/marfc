@@ -5,11 +5,11 @@ layout: base
 <header class="section spot-color-primary mr-hero">
   <div class="section__inner ">
     {# <div class="wrapper"> #}
-    {% imagePlaceholder "./src/assets/images/chino-rocha-SDmXMe4bf-0-unsplash.jpg", "Alt... The preview image for social media", "" %}
+    {% imagePlaceholder "./src/assets/images/splash-3.jpg", "Mens rugby", "mr-hero-img" %}
     {#<img src="assets/images/chino-rocha-SDmXMe4bf-0-unsplash.jpg" alt="Rugby players">#}
     <h1 class="text-center wrapper">{{ title }}</h1>
     <p class="wrapper ">
-      <span>A community run club for all ages. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam  cupiditate magnam amet.</spa>
+      <span>A community run club for all ages.</spa>
     </p>
     {# </div> #}
   </div>
@@ -18,31 +18,38 @@ layout: base
 
 <article class="region mr-news" style="--region-space-top: var(--space-s)">
   <div class="wrapper flow prose">
-    <h2>Latest News</h2>
-    <!--<p>Our latest updates.</p>
-     blog intro text is optional. -->
-    {# {% if blog.intro %}
-      <p>{{ blog.intro }}</p>
-    {% endif %} #}
+    <h3>Welcome to Mid Argyll Rugby Football Club.</h3>
+    <p>Mid Argyll Rugby Club was formed in 1978 by a group of local enthusiasts. James McLellan, Colin Stewart, Jock Gray, Davie Anderson &amp; Ian Thomson being the original committee members.</p>
+    <p>We are a community-based club offering rugby playing and training opportunities to anyone from Primary 1 to Adult ages, for Boys &amp; Girls and Men &amp; Women.</p>
+    <p>Primary &amp; high school training is held on the grass pitch at Lochgilphead Joint Campus every Tuesday during term time from 4pm &ndash; 5pm.</p>
+    <div class="mr-grid-2">
+      {% imagePlaceholder "./src/assets/images/girls-02.jpg", "Girls rugby", "mb-1 mr-outline", "lazy" %}
+      <p>Ladies&rsquo; fitness &amp; training sessions are held every Monday evening from 6:30pm - 7:30pm contact our Women &amp; Girls Community Coach, Drew Buckley, for venue details.</p>
+    </div>
 
+    <div class="mr-grid-2">
+      <p>Men&rsquo;s training is held on Tuesday evenings from 7pm &ndash; 8:30pm, contact our club secretary, Lee Buckley, or Club captain, Stuart Charnock, for venue details.</p>
+      {% imagePlaceholder "./src/assets/images/men-02.jpg", "Mens rugby", " mt-1 mr-outline", "lazy" %}
+    </div>
+    
+    <p>The club also has a <a href="https://www.facebook.com/midargyllrfc/" target="_blank">Face Book page</a> and <a href="https://twitter.com/MidArgyllRFC" target="_blank">twitter page</a> which are updated with all the latest training details and playing fixtures.</p>
+    <p>Everyone is welcome from novice to the most experienced.</p>
   </div>
-  <!-- TODO: duplicate of partials/blog.njk -->
+</article>
 
-  {# {% include "partials/news-list.njk" %} #}
+{# <article class="region mr-news" style="--region-space-top: var(--space-s)">
+  <div class="wrapper flow prose">
+    <h2>Latest News</h2>
+  </div>
 
   {% set countLimit = 4 %}
   {% include "partials/news-list.njk" %}
-
-  {# 
-          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
- #}
   <p class="wrapper text-center ">
     <a class="link-highlight" href="/news">Read all news</a>
   </p>
-</article>
+</article> #}
 
-<article class="region mr-highlight-bg ">
-  {# <div class="wrapper flow prose"> #}
+{# <article class="region mr-highlight-bg ">
   <h2>Sponsors</h2>
   <div class="mr-sponsors">
     <a href="#"><img src="https://via.placeholder.com/160x80/333333/ffffff?text=Example+sponsor" alt="Sponsor"></a>
@@ -60,130 +67,9 @@ layout: base
     <a href="#"><img src="https://via.placeholder.com/160x80/333333/ffffff?text=Example+sponsor" alt="Sponsor"></a>
     <a href="#"><img src="https://via.placeholder.com/160x80/333333/ffffff?text=Example+sponsor" alt="Sponsor"></a>
   </div>
-  {# </div> #}
-</article>
-
-{# <article class="region">
-  <div class="wrapper flow prose">
-    <h2>Latest Events</h2>
-    <ul class="wrapper mt-l-xl mr-events" role="list">
-      <li class="flow">
-        <h3>
-          <a href="#">Event 1 title</a>
-        </h3>
-        <time class="size-step-0" datetime="2023-02-14 20:00">14th Feb 2023</time>
-        <p>Event details Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus fugit quidem, quae nemo labore voluptas sed veritatis perspiciatis nostrum fugiat? Magni cumque accusantium, fuga ipsum nam officia culpa numquam a!</p>
-      </li>
-      <li class="flow">
-        <h3>
-          <a href="#">Event 2 title</a>
-        </h3>
-        <time class="size-step-0" datetime="2023-02-14 20:00">14th Feb 2023</time>
-        <p>Event details Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus fugit quidem, quae nemo labore voluptas sed veritatis perspiciatis nostrum fugiat? Magni cumque accusantium, fuga ipsum nam officia culpa numquam a!</p>
-      </li>
-      <li class="flow">
-        <h3>
-          <a href="#">Event 3 title</a>
-        </h3>
-        <time class="size-step-0" datetime="2023-02-14 20:00">14th Feb 2023</time>
-        <p>Event details Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus fugit quidem, quae nemo labore voluptas sed veritatis perspiciatis nostrum fugiat? Magni cumque accusantium, fuga ipsum nam officia culpa numquam a!</p>
-      </li>
-    </ul>
-    <p class="wrapper text-center ">
-      <a class="link-highlight" href="#">See all events</a>
-    </p>
-  </div>
 </article> #}
 
-{# <article class="region">
-  <div class="wrapper flow prose">
-    <h2>Teams</h2>
-  </div>
-  <ul class="wrapper grid mt-l-xl mr-teams" role="list" data-rows="masonry" data-layout="50-50">
-    <li class="flow">
-      <details>
-        <summary>
-          <h3>Mens senior</h3>
-        </summary>
-        <ul>
-          <li>1. Player McPlayer</li>
-          <li>2. Player McPlayer</li>
-          <li>3. Player McPlayer</li>
-          <li>4. Player McPlayer</li>
-          <li>5. Player McPlayer</li>
-          <li>6. Player McPlayer</li>
-          <li>7. Player McPlayer</li>
-          <li>8. Player McPlayer</li>
-          <li>9. Player McPlayer</li>
-          <li>10. Player McPlayer</li>
-        </ul>
-      </details>
-    </li>
-
-    <li class="flow">
-      <details>
-        <summary>
-          <h3>Womens senior</h3>
-        </summary>
-        <ul>
-          <li>1. Player McPlayer</li>
-          <li>2. Player McPlayer</li>
-          <li>3. Player McPlayer</li>
-          <li>4. Player McPlayer</li>
-          <li>5. Player McPlayer</li>
-          <li>6. Player McPlayer</li>
-          <li>7. Player McPlayer</li>
-          <li>8. Player McPlayer</li>
-          <li>9. Player McPlayer</li>
-          <li>10. Player McPlayer</li>
-        </ul>
-      </details>
-    </li>
-
-    <li class="flow">
-      <details>
-        <summary>
-          <h3>Girls</h3>
-        </summary>
-        <ul>
-          <li>1. Player McPlayer</li>
-          <li>2. Player McPlayer</li>
-          <li>3. Player McPlayer</li>
-          <li>4. Player McPlayer</li>
-          <li>5. Player McPlayer</li>
-          <li>6. Player McPlayer</li>
-          <li>7. Player McPlayer</li>
-          <li>8. Player McPlayer</li>
-          <li>9. Player McPlayer</li>
-          <li>10. Player McPlayer</li>
-        </ul>
-      </details>
-    </li>
-
-    <li class="flow">
-      <details>
-        <summary>
-          <h3>Boys</h3>
-        </summary>
-        <ul>
-          <li>1. Player McPlayer</li>
-          <li>2. Player McPlayer</li>
-          <li>3. Player McPlayer</li>
-          <li>4. Player McPlayer</li>
-          <li>5. Player McPlayer</li>
-          <li>6. Player McPlayer</li>
-          <li>7. Player McPlayer</li>
-          <li>8. Player McPlayer</li>
-          <li>9. Player McPlayer</li>
-          <li>10. Player McPlayer</li>
-        </ul>
-      </details>
-    </li>
-
-  </ul>
-</article> #}
-
-<article class="region  ">
+<article class="region mr-highlight-bg " id="gallery">
   <h2>Gallery</h2>
   <div class="mr-gallery">
     <ul class="grid mt-l-xl" role="list" data-rows="masonry" data-layout="50-50">
@@ -224,5 +110,18 @@ layout: base
         <a href="#"><img src="https://picsum.photos/seed/marfc12/600/400" alt="gallery image"></a>
       </li>
     </ul>
+  </div>
+</article>
+
+
+<article class="region" id="documents">
+  <div class="wrapper flow prose">
+      <h2>Documents</h2>
+  </div>
+</article>
+
+<article class="region  mr-highlight-bg" id="contact">
+  <div class="wrapper flow prose">
+      <h2>Contact</h2>
   </div>
 </article>

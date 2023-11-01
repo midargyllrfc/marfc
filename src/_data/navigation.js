@@ -1,9 +1,9 @@
 module.exports = {
   top: [
-    {
-      text: 'News',
-      url: '/news'
-    },
+    // {
+    //   text: 'News',
+    //   url: '/news'
+    // },
     // {
     //   text: 'Events',
     //   url: '#'
@@ -15,11 +15,15 @@ module.exports = {
 
     {
       text: 'Gallery',
-      url: '#'
+      url: '#gallery'
     },
     {
       text: 'Documents',
-      url: '#mrDocuments'
+      url: '#documents'
+    },
+    {
+      text: 'Contact',
+      url: '#contact'
     }
   ],
   bottom: [

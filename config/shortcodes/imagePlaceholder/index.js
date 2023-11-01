@@ -2,7 +2,7 @@ const Image = require('@11ty/eleventy-img');
 const path = require('path');
 const htmlmin = require('html-minifier-terser');
 
-const imageShortcodePlaceholder = async (src, alt, lazy, caption, sizes = '100vw') => {
+const imageShortcodePlaceholder = async (src, alt, className, lazy, caption, sizes = '100vw') => {
   if (!alt) {
     throw new Error(`Missing \`alt\` on myImage from: ${src}`);
   }
@@ -43,6 +43,7 @@ const imageShortcodePlaceholder = async (src, alt, lazy, caption, sizes = '100vw
       .join('\n')}
       <img
         src="/assets/images/image-placeholder.png"
+        class="${className}"
         data-src="${lowsrc.url}"
         width="${lowsrc.width}"
         height="${lowsrc.height}"
