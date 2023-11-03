@@ -4,7 +4,7 @@
   "engines": {
     "node": ">=16.x.x"
   },
-  "description": "Eleventy starter based on the workflow suggested by Andy Bell's buildexcellentwebsit.es.",
+  "description": "Mid-Argyll Rugby FC site.",
   "main": ".eleventy.js",
   "scripts": {
     "clean": "rimraf dist",
