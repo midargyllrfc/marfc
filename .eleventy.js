@@ -104,7 +104,7 @@ module.exports = eleventyConfig => {
   // 	--------------------- Passthrough File Copy -----------------------
 
   // same path
-  ['src/assets/fonts/', 'src/assets/images/', 'src/assets/page-css/'].forEach(path =>
+  ['src/assets/fonts/', 'src/assets/images/', 'src/assets/page-css/', 'src/assets/docs/'].forEach(path =>
     eleventyConfig.addPassthroughCopy(path)
   );
 

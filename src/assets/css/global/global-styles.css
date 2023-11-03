@@ -264,17 +264,18 @@ p:has(.link-highlight) {
   }
 }
 
-.mr-list-contacts {
+/* .mr-list-contacts {
   margin: 0 auto;
   width: fit-content;
-}
+} */
 
 .mr-list-contacts li{
-display: inline-block;
+  list-style-type: none;
 padding: 1rem;
 background-color: white;
-margin-left: 0.5rem;
+/* margin-left: 0.5rem;
 margin-right: 0.5rem;
+margin-bottom: 1rem; */
 }
 
 .mb-1 {
@@ -287,4 +288,35 @@ margin-right: 0.5rem;
 
 .mr-0-5 {
   margin-right: 0.5rem;
+}
+
+.mr-documents, .mr-list-contacts{
+  display: flex;
+  gap:0.5rem;
+  flex-flow: row wrap;
+  justify-content:center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.mr-documents li{
+  list-style-type: none;
+  /* margin-bottom: 1rem; */
+}
+
+.mr-documents li > a {
+  display: flex;
+  align-items:center;
+  background-color: #595959;
+  padding: 0.5rem 1rem;
+  border-radius:5px;
+}
+
+.mr-documents li p {
+  display: inline-block;
+}
+
+.mr-documents-download svg {
+  width: 6rem;
+  height: 6rem;
 }

@@ -74,25 +74,77 @@ layout: base
   <div class="mr-gallery">
     <ul class="grid mt-l-xl" role="list" data-rows="masonry" data-layout="50-50">
       <li>
-        <a href="#"><img src="https://picsum.photos/seed/marfc1/600/400" alt="gallery image"></a>
+        {% imagePlaceholder "./src/assets/images/gallery/Huddle.jpg", "Looking up into the faces of women in a rugby huddle", "", "lazy" %}
       </li>
       <li>
-        <a href="#"><img src="https://picsum.photos/seed/marfc2/600/400" alt="gallery image"></a>
+        {% imagePlaceholder "./src/assets/images/gallery/20220827_132700.jpg", "xxxxx", "", "lazy" %}
       </li>
       <li>
-        <a href="#"><img src="https://picsum.photos/seed/marfc3/600/400" alt="gallery image"></a>
+        {% imagePlaceholder "./src/assets/images/gallery/DSC_0042.jpg", "xxxxx", "", "lazy" %}
       </li>
-
-
+      <li>
+        {% imagePlaceholder "./src/assets/images/gallery/Islay-53-7.jpg", "xxxxx", "", "lazy" %}
+      </li>
+      <li>
+        {% imagePlaceholder "./src/assets/images/gallery/Rugby-Dalriada-Winners-2023.jpg", "xxxxx", "", "lazy" %}
+      </li>
+      
+      <li>
+        {% imagePlaceholder "./src/assets/images/gallery/Ladies-Team.jpeg", "xxxxx", "", "lazy" %}
+      </li>
+      <li>
+        {% imagePlaceholder "./src/assets/images/gallery/MA-U18-V-Ayr.jpg", "xxxxx", "", "lazy" %}
+      </li>
+      <li>
+        {% imagePlaceholder "./src/assets/images/gallery/Lochgilphead-High.jpg", "xxxxx", "", "lazy" %}
+      </li>
     </ul>
   </div>
 </article>
 
 
 <article class="region" id="documents">
-  <div class="wrapper flow prose">
+
       <h2>Documents</h2>
-  </div>
+
+      <ul class="mr-documents">
+        
+        <li>
+          <a download href="./assets/docs/MARFC-parent-letter-2023-24.pdf">
+            <span class="mr-documents-download">{% include '../assets/images/icons/icon-download.svg' %}</span>
+            <p>Letter to parents 2023-2024 {% include '../assets/images/icons/icon-pdf.svg' %}</p>
+          </a>
+        </li>
+
+        <li>
+          <a download href="./assets/docs/Membership-form-23-24.pdf">
+            <span class="mr-documents-download">{% include '../assets/images/icons/icon-download.svg' %}</span>
+            <p>Membership form 2023-2024 {% include '../assets/images/icons/icon-pdf.svg' %}</p>
+          </a>
+        </li>
+
+        <li>
+          <a download href="./assets/docs/Mid-Argyll-Rugby-Club-Consent-Form-2023.pdf">
+            <span class="mr-documents-download">{% include '../assets/images/icons/icon-download.svg' %}</span>
+            <p>Consent form 2023-2024 {% include '../assets/images/icons/icon-pdf.svg' %}</p>
+          </a>
+        </li>
+        
+        <li>
+          <a download href="./assets/docs/MARFC-Code-of-Conduct.pdf">
+            <span class="mr-documents-download">{% include '../assets/images/icons/icon-download.svg' %}</span>
+            <p>Code of conduct {% include '../assets/images/icons/icon-pdf.svg' %}</p>
+          </a>
+        </li>
+
+        <li>
+          <a download href="./assets/docs/Constitution-April-2022.pdf">
+            <span class="mr-documents-download">{% include '../assets/images/icons/icon-download.svg' %}</span>
+            <p>Constitution {% include '../assets/images/icons/icon-pdf.svg' %}</p>
+          </a>
+        </li>
+      </ul>
+
 </article>
 
 <article class="region  mr-highlight-bg" id="contact">
