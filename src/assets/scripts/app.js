@@ -49,4 +49,10 @@ document.addEventListener('click', e => {
   }
 });
 
+nav.querySelectorAll("ul > li > a").forEach(link => {
+  link.addEventListener("click", function(event){
+    disableMenu();
+  })
+})
+
 nav.insertBefore(burgerClone, list);

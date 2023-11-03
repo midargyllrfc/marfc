@@ -35,9 +35,15 @@
 }
 
 nav.navbar {
-  position: var(--nav-position, absolute);
+  /* position: var(--nav-position, absolute); */
   /* inset-block-start: 0.5rem; */
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-dark);
   inset-inline-end: 0.1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Remove default list styling and create layout for list */
