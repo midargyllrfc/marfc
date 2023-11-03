@@ -46,6 +46,16 @@ nav.navbar {
   padding-right: 0.5rem;
 }
 
+@media (min-width: 48em) {
+  nav.navbar {
+    position: var(--nav-position, absolute);
+    top: 1rem;
+    right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Remove default list styling and create layout for list */
 nav.navbar ul {
   background: var(--nav-list-background, var(--color-dark));
