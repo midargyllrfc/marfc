@@ -292,7 +292,7 @@ margin-bottom: 1rem; */
 
 .mr-documents, .mr-list-contacts{
   display: flex;
-  gap:0.5rem;
+  gap:1rem;
   flex-flow: row wrap;
   justify-content:center;
   padding-left: 0.5rem;
