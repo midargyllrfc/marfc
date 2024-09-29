@@ -1,16 +1,18 @@
-# Misc
-*.log
-npm-debug.*
-*.scssc
-*.log
-*.swp
-.DS_Store
-Thumbs.db
-.sass-cache
-.env
+website-build/
+package-lock.json
+.nvmrc
 .cache
-
-# Node modules and output
 node_modules
+.tmp
 dist
-src/_includes/css
+.DS_Store
+*.mp4
+*.wav
+*.mov
+*.avi
+*.zip
+*.mts
+*.hdr
+.npmrc
+.vscode
+*.psd

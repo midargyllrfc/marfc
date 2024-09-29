@@ -1,0 +1,143 @@
+---
+cssFiles: []
+jsFiles: []
+---
+
+{% set env = devEnvironment.environment %}
+
+{% if env === 'dev' %}
+    {% set buildURL = "" %}
+{% else %}
+    {% set buildURL = "/_shared/" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en"  data-is-dev={% if env === 'dev' %}"true"{% else %}"false"{% endif %}>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title | striptags(false) }}</title>
+        <meta name="description" content="{{ description or metadata.description }}">
+        <meta name="generator" content="{{ eleventy.generator }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" type="image/svg+xml" href="/_shared/favicons/favicon.svg">
+<link rel="icon" type="image/png" href="/_shared/favicons/favicon.png">
+
+        {#- Atom and JSON feeds included by default #}
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+        {% if env === 'dev' %}
+            <link rel="stylesheet" href="/_shared/css/reset.css">
+            <link rel="stylesheet" href="/_shared/css/brand.css">
+            <link rel="stylesheet" href="/_shared/css/shared.css">
+        {% else %}
+            {% set css %}
+            {% include "/_shared/css/reset.css" %}
+            {% include "/_shared/css/brand.css" %}
+            {% include "/_shared/css/shared.css" %}
+            {% endset %}
+            <style>
+                {{css | cssmin | safe}}
+            </style>
+        {% endif %}
+
+        {% for file in cssFiles %}
+            <link rel="stylesheet" href="{{file}}">
+        {% endfor %}
+
+        {% if env === 'dev' %}
+            <script defer src="/_shared/js/shared.js"></script>
+        {% endif %}
+
+        {% for file in jsFilesExternal | reverse %}
+            <script defer src="{{file}}"></script>
+        {% endfor %}
+
+        {% for file in jsFiles %}
+            <script type="module" defer src="{{file}}"></script>
+        {% endfor %}
+
+    </head>
+
+    <body>
+
+        <div class="mrf-skip">
+            <p><a href="#main">Skip to main content</a> or <a href="#footer">the footer</a>.</p>
+        </div>
+            
+        <div class="mrf-full-height">           
+            
+                
+            <header>
+
+                <div class="mrf-nav-container">
+    
+                    <a href="/" class="mrf-logo">
+                        <p class="visually-hidden">Go to the home page.</p>{% include "../../website-source/_shared/images/logo/marfc-logo.svg" %}</a>
+                    </a>   
+    
+                    <nav>
+                        <ul>
+                            {% set navPages = collections.all | eleventyNavigation %}
+                            {% set navActiveClass = "mrf-is-active" %}
+                            {%- for navItem in navPages %}
+                                {# Check that the item url is first in the page url so that e.g. tags/article doesn't make article active #}
+                                {# <li><a href="{{ navItem.url }}">{{ navItem.title }}</a></li> #}
+                                {% if page.url %}
+        
+                                    {% set urlArray = page
+                                        .url
+                                        .split("/") %}
+        
+                                    {% if (navItem.url == "/") %}
+                                        <li {% if navItem.url == page.url %}class="{{navActiveClass}}"{% endif %}>
+                                            <a href="{{ navItem.url }}">{{ navItem.title }}</a>
+                                        </li>
+                                    {% elif navItem.url and page.url %}
+                                        <li{% if navItem.url == "/"+urlArray[1]+"/" %} class="{{navActiveClass}}"{% endif %}>
+                                            <a href="{{ navItem.url }}">{{ navItem.title }}</a>
+                                        </li>
+                                    {% endif %}
+                                    
+                                {% endif %}
+    
+                            {%- endfor %}
+    
+                        </ul>
+                    </nav>
+                </div>
+
+                    {# <img class="mrf-hero-img" src="/_shared/images/splash-3.jpg" alt="Mens rugby"> #}
+                <div class="mrf-hero">
+                    <div>
+                        <h1>Mid&#8209;Argyll Rugby</h1>
+                        <p>A community run club for all ages.</p>
+                    </div>
+                </div>
+            </header>
+         
+            
+            <main id="main">
+                {{ content | safe }}
+            </main>
+                        
+            {% include "../_components/footer.njk" %}
+
+            
+        </div>
+
+        {% if env != 'dev' %}
+            {% set js %}
+            {% include "/_shared/js/shared.js" %}
+            {% endset %}
+            <script>
+                {{js | jsmin | safe}}
+            </script>
+        {% endif %}
+
+    </body>
+
+</html>

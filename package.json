@@ -1,64 +1,48 @@
 {
-  "name": "eleventy-excellent",
-  "version": "1.1.6",
-  "engines": {
-    "node": ">=16.x.x"
-  },
-  "description": "Mid-Argyll Rugby FC site.",
-  "main": ".eleventy.js",
+  "name": "marfc",
+  "version": "2.0.0",
+  "description": "Mid-Argyll Rugby Football Club",
+  "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "dev:11ty": "eleventy --serve --watch",
-    "build:11ty": "cross-env ELEVENTY_ENV=production eleventy",
-    "dev": "run-p dev:*",
-    "build": "run-s clean build:*"
+    "del": "del-cli website-build",
+    "serve": "cross-env DEV_ENVIRONMENT=dev npx @11ty/eleventy --serve ",
+    "dev": "run-s del serve",
+    "build:11ty": "cross-env DEV_ENVIRONMENT=prod npx @11ty/eleventy",
+    "build:esbuild": "node _back-end/build.mjs",
+    "build:server": "npx @11ty/eleventy-dev-server --dir=website-build",
+    "build": "run-s del build:11ty build:esbuild"
   },
   "keywords": [],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/madrilene/eleventy-excellent.git"
+  "author": {
+    "name": "Patrick Grey",
+    "email": "hi@risingsky.co.uk",
+    "url": "https://risingsky.co.uk/"
   },
-  "author": "Lene Saile",
   "license": "ISC",
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-fetch": "^3.0.0",
-    "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "tailwindcss": "^3.0.23"
-  },
+  "type": "module",
   "devDependencies": {
-    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@netlify/plugin-a11y": "^1.0.0-beta.1",
-    "@toycode/markdown-it-class": "^1.2.4",
-    "autoprefixer": "^10.4.13",
-    "clean-css": "^5.3.1",
+    "@11ty/eleventy": "3.0.0-alpha.20",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-plugin-vite": "^4.0.0",
+    "@sardine/eleventy-plugin-external-links": "^1.4.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.1.7",
-    "dayjs": "^1.11.5",
-    "dotenv": "^16.0.3",
-    "esbuild": "^0.16.4",
-    "glob": "^8.0.3",
-    "html-minifier-terser": "^7.1.0",
-    "lodash": "^4.17.21",
-    "markdown-it": "^13.0.1",
-    "markdown-it-abbr": "^1.0.4",
-    "markdown-it-anchor": "^8.6.5",
-    "markdown-it-emoji": "^2.0.2",
-    "markdown-it-footnote": "^3.0.3",
-    "markdown-it-link-attributes": "^4.0.1",
-    "markdown-it-mark": "^3.0.1",
-    "markdown-it-prism": "^2.3.0",
-    "netlify-plugin-cache": "^1.0.3",
+    "cross-var": "^1.1.0",
+    "del-cli": "^5.1.0",
+    "directory-tree": "^3.5.2",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "eleventy-auto-cache-buster": "^0.6.1",
+    "esbuild": "^0.23.1",
+    "lightningcss": "^1.27.0",
+    "luxon": "^3.5.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.8",
-    "postcss-cli": "^10.0.0",
-    "postcss-import": "^15.0.0",
-    "postcss-import-ext-glob": "^2.0.1",
-    "postcss-js": "^4.0.0",
-    "rimraf": "^3.0.2",
-    "sanitize-html": "^2.7.2",
-    "slugify": "^1.6.5"
+    "terser": "^5.33.0",
+    "tiny-glob": "^0.2.9"
+  },
+  "dependencies": {
+    "decap-cms-app": "^3.3.3"
   }
 }

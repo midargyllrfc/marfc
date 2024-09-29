@@ -1,0 +1,26 @@
+---
+title: This is a note
+layout: base
+cssFiles: []
+jsFiles: []
+---
+<article>
+    
+    <div class="pg-column-main flow">
+        <h1>{{title}}</h1>
+        <div class="pg-tags-container">
+            <p>Tags:</p>
+            <ul class="pg-tags-list">
+                {% for tag in tags %}
+                    <li>
+                        <a class="pg-tag" href="/tags/{{ tag | slugify }}/">{{tag}}</a>
+                    </li>
+                {% endfor %} 
+            </ul>
+        </div>
+        <p>Published: <datetime>{{publish | readableDate}}</datetime></p>
+        {% if update %}<p>Updated: <datetime>{{update | readableDate}}</datetime></p>{% endif%}
+        {{ content | safe }}
+    </div>
+
+</article>

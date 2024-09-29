@@ -1,0 +1,603 @@
+@font-face {
+    font-family: Redhat;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src: local(''),
+        url(../fonts/redhat/red-hat-display-v7-latin-900.woff2) format('woff2'),
+        url(../fonts/redhat/red-hat-display-v7-latin-900.woff) format('woff');
+}
+
+/*
+##     ##    ###    ########   ######
+##     ##   ## ##   ##     ## ##    ##
+##     ##  ##   ##  ##     ## ##
+##     ## ##     ## ########   ######
+ ##   ##  ######### ##   ##         ##
+  ## ##   ##     ## ##    ##  ##    ##
+   ###    ##     ## ##     ##  ######
+*/
+
+:root {
+
+    /* FONT SCALE */
+
+    --font-size--2: clamp(0.7813rem, 0.7302rem + 0.2554vw, 0.96rem);
+    --font-size--1: clamp(0.9375rem, 0.8625rem + 0.375vw, 1.2rem);
+    --font-size-0: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+    --font-size-1: clamp(1.35rem, 1.2rem + 0.75vw, 1.875rem);
+    --font-size-2: clamp(1.62rem, 1.4132rem + 1.0339vw, 2.3438rem);
+    --font-size-3: clamp(1.944rem, 1.6624rem + 1.4081vw, 2.9297rem);
+    --font-size-4: clamp(2.3328rem, 1.953rem + 1.899vw, 3.6621rem);
+    --font-size-5: clamp(2.7994rem, 1.3847rem + 7.0732vw, 6.8665rem);
+
+    /* SPACE SCALE */
+    --space-3xs: clamp(0.3125rem, 0.2473rem + 0.3261vw, 0.5rem);
+    --space-2xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+    --space-xs: clamp(0.875rem, 0.6793rem + 0.9783vw, 1.4375rem);
+    --space-s: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+    --space-m: clamp(1.6875rem, 1.2962rem + 1.9565vw, 2.8125rem);
+    --space-l: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+    --space-xl: clamp(3.375rem, 2.5924rem + 3.913vw, 5.625rem);
+    --space-2xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+    --space-3xl: clamp(6.75rem, 5.1848rem + 7.8261vw, 11.25rem);
+
+    --mrf-font-body: Seravek,
+        'Gill Sans Nova',
+        Ubuntu,
+        Calibri,
+        'DejaVu Sans',
+        source-sans-pro,
+        sans-serif;
+    --mrf-font-headers: Redhat, Avenir,
+        Montserrat,
+        Corbel,
+        'URW Gothic',
+        source-sans-pro,
+        sans-serif;
+
+    --mrf-max-width: 70ch;
+    --mrf-max-width-header: 100ch;
+    --mrf-header-height: 40vh;
+    --mrf-header-alpha: 0.05;
+
+    --mrf-colour-dark: #404040;
+    --mrf-colour-dark-lowlight: #222;
+    --mrf-colour-highlight: #f8bf01;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* --rs-colour-ec-dark-blue: white; */
+    }
+}
+
+/*
+########     ###     ######  ########
+##     ##   ## ##   ##    ## ##
+##     ##  ##   ##  ##       ##
+########  ##     ##  ######  ######
+##     ## #########       ## ##
+##     ## ##     ## ##    ## ##
+########  ##     ##  ######  ########
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--mrf-font-body);
+    font-weight: normal;
+    font-size: var(--font-size-0);
+    background-color: var(--mrf-colour-dark);
+    color: whitesmoke;
+}
+
+*::selection {
+    background-color: var(--mrf-colour-highlight);
+    color: var(--mrf-colour-dark);
+}
+
+*:focus-visible {
+    outline: 2px solid var(--mrf-colour-outline);
+}
+
+p {
+    max-width: var(--mrf-max-width);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--mrf-font-headers);
+    font-weight: 900;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: var(--font-size-5);
+    margin-block-start: 0;
+    margin-block-end: var(--space-s);
+    /* letter-spacing: -7px;
+    transform: scaleX(1.2); */
+}
+
+h2 {
+    font-size: var(--font-size-3);
+    padding-block-start: var(--space-l);
+    margin-block-end: var(--space-s);
+    color: var(--mrf-colour-highlight);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--font-size-1);
+    font-weight: 400;
+}
+
+
+h4 {
+    font-size: var(--font-size-1);
+    text-transform: capitalize;
+}
+
+a {
+    text-underline-offset: 4px;
+}
+
+a:visited {}
+
+a[target="_blank"] {
+    position: relative;
+}
+
+a[target="_blank"]::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: text-top;
+    background-image: url(/_shared/images/icons/icon-new-window.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-inline-start: 3px;
+    margin-inline-end: 5px;
+}
+
+a[href^="#"] {
+    position: relative;
+}
+
+a[href^="#"]::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: text-top;
+    background-image: url(/_shared/images/icons/icon-arrow-down.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-inline-start: 3px;
+    margin-inline-end: 5px;
+}
+
+/*
+.##.....##.########.####.##.......####.########.####.########..######.
+.##.....##....##.....##..##........##.....##.....##..##.......##....##
+.##.....##....##.....##..##........##.....##.....##..##.......##......
+.##.....##....##.....##..##........##.....##.....##..######....######.
+.##.....##....##.....##..##........##.....##.....##..##.............##
+.##.....##....##.....##..##........##.....##.....##..##.......##....##
+..#######.....##....####.########.####....##....####.########..######.
+*/
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.flow>*+* {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+.mrf-relative {
+    position: relative;
+}
+
+@media not (scripting: enabled) {
+    .mrf-needs-js {
+        display: none !important;
+    }
+}
+
+
+@media screen and (min-width: 1200px) and (max-width:1700px) {}
+
+@media (prefers-reduced-motion) {}
+
+.mrf-centre {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.mrf-mbs-0 {
+    margin-block-start: 0;
+}
+
+.mrf-mbs-m {
+    margin-block-start: var(--space-m);
+}
+
+/*
+ ######  ##    ## #### ########
+##    ## ##   ##   ##  ##     ##
+##       ##  ##    ##  ##     ##
+ ######  #####     ##  ########
+      ## ##  ##    ##  ##
+##    ## ##   ##   ##  ##
+ ######  ##    ## #### ##
+*/
+
+.mrf-skip {
+    text-align: center;
+    display: grid;
+    position: relative;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease-in-out;
+}
+
+.mrf-skip:focus-within {
+    grid-template-rows: 1fr;
+}
+
+.mrf-skip>p {
+    overflow: hidden;
+    margin: 0;
+}
+
+.mrf-skip>p>a {
+    display: inline-block;
+    padding-block: 1rem;
+}
+
+.mrf-skip::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: var(--space-2xs) var(--space-2xs) 0 var(--space-2xs);
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    left: 50%;
+    bottom: calc(var(--space-2xs) * -1);
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.mrf-skip:focus-within::after {
+    opacity: 1;
+}
+
+/*
+##     ## ########    ###    ########
+##     ## ##         ## ##   ##     ##
+##     ## ##        ##   ##  ##     ##
+######### ######   ##     ## ##     ##
+##     ## ##       ######### ##     ##
+##     ## ##       ##     ## ##     ##
+##     ## ######## ##     ## ########
+*/
+
+.mrf-nav-container {
+    max-width: var(--mrf-max-width-header);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mrf-logo svg {
+    width: 100%;
+    max-width: var(--space-3xl);
+    margin-block-start: var(--space-2xs);
+    fill: var(--mrf-colour-highlight)
+}
+
+nav>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul>li {
+    display: inline-block;
+    gap: var(--space-2xs);
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    margin-inline-end: var(--space-2xs);
+    font-size: var(--font-size-2);
+}
+
+nav>ul>li>a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.mrf-hero {
+    height: var(--mrf-header-height);
+    background-color: var(--mrf-colour-highlight);
+    color: var(--mrf-colour-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mrf-hero p {
+    width: fit-content;
+    margin: 0 auto;
+    padding-inline: var(--space-2xs);
+    /* padding-block: 2px; */
+    line-height: 1.1;
+    font-size: var(--font-size-2);
+    background-color: var(--mrf-colour-highlight);
+}
+
+
+/*
+##          ###    ##    ##  #######  ##     ## ########
+##         ## ##    ##  ##  ##     ## ##     ##    ##
+##        ##   ##    ####   ##     ## ##     ##    ##
+##       ##     ##    ##    ##     ## ##     ##    ##
+##       #########    ##    ##     ## ##     ##    ##
+##       ##     ##    ##    ##     ## ##     ##    ##
+######## ##     ##    ##     #######   #######     ##
+*/
+
+.mrf-full-height {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh;
+    /* padding-block-start: var(--space-xs); */
+}
+
+.mrf-column-main {
+    max-width: var(--mrf-max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-xs);
+    width: 100%;
+    padding-block-end: var(--space-m);
+}
+
+.mrf-column-main-wide {
+    max-width: var(--mrf-max-width-header);
+}
+
+.mrf-column-main-full {
+    max-width: none;
+}
+
+article:nth-child(even) {
+    background-color: var(--mrf-colour-dark-lowlight);
+}
+
+/*
+##       ####  ######  ########  ######
+##        ##  ##    ##    ##    ##    ##
+##        ##  ##          ##    ##
+##        ##   ######     ##     ######
+##        ##        ##    ##          ##
+##        ##  ##    ##    ##    ##    ##
+######## ####  ######     ##     ######
+*/
+
+.mrf-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.mrf-list time {
+    color: var(--mrf-colour-mid);
+    margin-inline-start: var(--space-2xs);
+}
+
+/*
+#### ##    ## ######## ########   #######
+ ##  ###   ##    ##    ##     ## ##     ##
+ ##  ####  ##    ##    ##     ## ##     ##
+ ##  ## ## ##    ##    ########  ##     ##
+ ##  ##  ####    ##    ##   ##   ##     ##
+ ##  ##   ###    ##    ##    ##  ##     ##
+#### ##    ##    ##    ##     ##  #######
+*/
+
+.mrf-intro img {
+    width: 100%;
+    height: auto;
+    max-width: 50vh;
+    display: block;
+    margin: 0 auto;
+    margin-block: var(--space-m);
+}
+
+/*
+ ######      ###    ##       ##       ######## ########  ##    ##
+##    ##    ## ##   ##       ##       ##       ##     ##  ##  ##
+##         ##   ##  ##       ##       ##       ##     ##   ####
+##   #### ##     ## ##       ##       ######   ########     ##
+##    ##  ######### ##       ##       ##       ##   ##      ##
+##    ##  ##     ## ##       ##       ##       ##    ##     ##
+ ######   ##     ## ######## ######## ######## ##     ##    ##
+*/
+
+.mrf-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-s);
+}
+
+.mrf-gallery img {
+    width: 100%;
+    max-width: 20rem;
+}
+
+/*
+########   #######   ######   ######
+##     ## ##     ## ##    ## ##    ##
+##     ## ##     ## ##       ##
+##     ## ##     ## ##        ######
+##     ## ##     ## ##             ##
+##     ## ##     ## ##    ## ##    ##
+########   #######   ######   ######
+*/
+
+.mrf-documents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    justify-content: center;
+    margin: 0;
+    margin-block-end: var(--space-l);
+}
+
+.mrf-documents>li>a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    background-color: var(--mrf-colour-dark-lowlight);
+    border-radius: 5px;
+    padding: var(--space-xs) var(--space-s);
+    font-size: var(--font-size-1);
+}
+
+.mrf-documents>li>a::before {
+    content: "";
+    width: var(--font-size-1);
+    height: var(--font-size-1);
+    display: inline-block;
+    background-image: url(../images/icons/icon-pdf.svg);
+    background-repeat: no-repeat;
+}
+
+.mrf-documents>li>a p {
+    margin: 0;
+}
+
+/*
+########    ###     ######    ######
+   ##      ## ##   ##    ##  ##    ##
+   ##     ##   ##  ##        ##
+   ##    ##     ## ##   ####  ######
+   ##    ######### ##    ##        ##
+   ##    ##     ## ##    ##  ##    ##
+   ##    ##     ##  ######    ######
+*/
+
+.mrf-tags-container,
+.mrf-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mrf-tags-list,
+.mrf-tags-container p {
+    margin: 0;
+}
+
+.mrf-tags-list {
+    list-style: none;
+    padding-inline-start: 0;
+    gap: var(--space-2xs);
+}
+
+.mrf-tag {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    background-color: var(--mrf-colour-dark);
+    color: whitesmoke;
+    padding: var(--space-3xs) var(--space-2xs);
+    text-wrap: nowrap;
+    padding-inline-start: var(--space-s);
+    border-start-end-radius: 5px;
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
+}
+
+.mrf-tag::before {
+    --mrf-hole-size: var(--space-3xs);
+    content: "";
+    display: block;
+    background-color: whitesmoke;
+    width: var(--mrf-hole-size);
+    height: var(--mrf-hole-size);
+    position: absolute;
+    left: calc(var(--space-3xs) + 4px);
+    top: calc(var(--space-3xs) + 4px);
+    transform: translateY(-50%);
+    border-radius: 9999px;
+}
+
+/*
+########  #######   #######  ######## ######## ########
+##       ##     ## ##     ##    ##    ##       ##     ##
+##       ##     ## ##     ##    ##    ##       ##     ##
+######   ##     ## ##     ##    ##    ######   ########
+##       ##     ## ##     ##    ##    ##       ##   ##
+##       ##     ## ##     ##    ##    ##       ##    ##
+##        #######   #######     ##    ######## ##     ##
+*/
+
+footer {
+    text-align: center;
+    background-color: var(--mrf-colour-dark-lowlight);
+    color: whitesmoke;
+    padding: var(--space-xl);
+    /* margin-block-start: var(--space-xl); */
+    /* gap: var(--space-xs); */
+}
+
+footer a,
+footer a:visited {
+    color: whitesmoke;
+}
+
+footer .mrf-contact {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 50em;
+}
+
+footer .mrf-contact li {
+    margin-block-end: var(--space-l);
+}
+
+@media (min-width: 35em) {
+    footer .mrf-contact {
+        display: grid;
+        gap: var(--space-l);
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
