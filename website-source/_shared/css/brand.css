@@ -523,16 +523,17 @@ article:nth-child(odd) {
 }
 
 .mrf-gallery figcaption {
-    margin-block-start: var(--space-2xs);
+    text-align: center;
+    margin-block-start: var(--space-3xs);
     font-size: var(--font-size--2);
 }
 
 .mrf-gallery img {
-    width: 100%;
-    max-width: 20rem;
-    height: auto;
-    max-height: 250px;
-    border: 8px solid whitesmoke;
+    width: auto;
+    /* max-width: 20rem; */
+    height: 100%;
+    max-height: 270px;
+    border: 10px solid whitesmoke;
 }
 
 .mrf-gallery a[target="_blank"]::after {
@@ -559,6 +560,7 @@ article:nth-child(odd) {
     font-size: var(--font-size-1);
     margin-block-end: var(--space-2xs);
     text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .mrf-list-news>li>a:hover {
