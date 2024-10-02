@@ -1,5 +1,4 @@
 ---
-title: "Mid-Argyll Rugby"
 layout: base
 cssFiles: ["/index.css"]
 eleventyNavigation:
@@ -9,26 +8,9 @@ eleventyNavigation:
 
 <article class="mrf-column-main mrf-intro flow">
 
-    <h2>Welcome to Mid&#8209;Argyll Rugby Football Club.</h2>
+    <h2>{{title}}</h2>
 
-    <p>Mid&#8209;Argyll Rugby Club was formed in 1978 by a group of local enthusiasts. James McLellan, Colin Stewart, Jock Gray, Davie Anderson &amp; Ian Thomson being the original committee members.</p>
-
-    <p>We are a community-based club offering rugby playing and training opportunities to anyone from Primary 1 to Adult ages, for Boys &amp; Girls and Men &amp; Women.</p>
-
-    <p>Primary &amp; high school training is held on the grass pitch at Lochgilphead Joint Campus every Tuesday during term time from 4pm&nbsp;&ndash;&nbsp;5pm.</p>
-      
-    <img src="/_shared/images/girls-02.jpg" alt="Girls rugby">
-    
-    <p>Ladies&rsquo; fitness &amp; training sessions are held every Monday evening from 6:30pm&nbsp;&ndash;&nbsp;7:30pm contact our Women &amp; Girls Community Coach, Drew Buckley, for venue details.</p>
-
-
-    <p>Men&rsquo;s training is held on Tuesday evenings from 7pm&nbsp;&ndash;&nbsp;8:30pm, contact our club secretary, Lee Buckley, or Club captain, Stuart Charnock, for venue details.</p>
-
-    <img src="/_shared/images/men-02.jpg" alt="Mens rugby">
-
-    
-    <p>The club also has a <a href="https://www.facebook.com/midargyllrfc/" target="_blank">Face Book page</a> and <a href="https://twitter.com/MidArgyllRFC" target="_blank">twitter page</a> which are updated with all the latest training details and playing fixtures.</p>
-    <p>Everyone is welcome from novice to the most experienced.</p>
+    {{intro | MDtoHTML | safe}}
 </article>
 
 <article  class="mrf-column-main mrf-column-main-full flow"  id="gallery">
@@ -55,7 +37,7 @@ eleventyNavigation:
 
 
   </div>
-  <p class="mrf-centre mrf-mbs-m">Go to the <a href="/gallery/">Gallery</a> to see all photos &gt;</p>
+  <p class="mrf-centre mrf-mbs-m">Go to the <a href="/gallery/">Gallery</a> to see all photos.</p>
 </article>
 
 

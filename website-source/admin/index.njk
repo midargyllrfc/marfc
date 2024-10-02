@@ -29,11 +29,11 @@ permalink: "admin/index.html"
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
         // The class to be used to preview notes
-        const NotePreview = createClass({
+        const PagesPreview = createClass({
             render: function() {
             const entry = this.props.entry;
 
-            return h('article', {}, //wrap the content in an article and div to get the same layout as the main website.
+            return h('article', {"className": "mrf-column-main mrf-intro flow"}, //wrap the content in an article and div to get the same layout as the main website.
                         h('div', {"className": "pg-column-main"},
                             h('h1', {}, entry.getIn(['data', 'title'])),
                             // I added in published and update date previews but this would add too much complexity to format like the site so I just removed them as clients can see the dates in the UI.
@@ -45,7 +45,7 @@ permalink: "admin/index.html"
             }
         });
         // Register the above class for use
-        CMS.registerPreviewTemplate("notes", NotePreview);
+        CMS.registerPreviewTemplate("pages", PagesPreview);
         // Inlcude the websites style sheets and boom, it starts to look very similar.
         CMS.registerPreviewStyle("/_shared/css/reset.css");
         CMS.registerPreviewStyle("/_shared/css/brand.css");

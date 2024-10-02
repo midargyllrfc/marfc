@@ -116,6 +116,7 @@ h3,
 h4,
 h5,
 h6 {
+    margin-block-start: 0;
     font-family: var(--mrf-font-headers);
     font-weight: 900;
     text-wrap: balance;
@@ -123,7 +124,6 @@ h6 {
 
 h1 {
     font-size: var(--font-size-5);
-    margin-block-start: 0;
     margin-block-end: var(--space-s);
     /* letter-spacing: -7px;
     transform: scaleX(1.2); */

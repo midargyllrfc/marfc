@@ -1,5 +1,6 @@
 import { minify } from "terser";
 import { DateTime } from "luxon";
+import markdownit from 'markdown-it'
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
@@ -19,7 +20,7 @@ import { transform } from 'lightningcss';
 export default async function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("website-source/**/*.(css|js|json)");
-    eleventyConfig.addPassthroughCopy("website-source/**/*.{svg,webp,avif,png,jpeg,jpg,ico,webmanifest,txt,ttf,yml}");
+    eleventyConfig.addPassthroughCopy("website-source/**/*.{svg,webp,avif,png,jpeg,jpg,ico,webmanifest,txt,ttf,yml,woff,woff2}");
 
 
     // eleventyConfig.addPassthroughCopy({
@@ -75,6 +76,11 @@ export default async function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async (code, callback) => {
         const minified = await minify(code);
         return callback(null, minified.code);
+    });
+
+    eleventyConfig.addFilter("MDtoHTML", input => {
+        const md = markdownit()
+        return md.render(input);
     });
 
     // Return all the tags used in a collection
