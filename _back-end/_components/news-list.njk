@@ -1,0 +1,19 @@
+{% if newsLimit %}
+    {% set forLimit = newsLimit %}
+{% else %}
+    {% set forLimit = 5 %}
+{% endif %}
+ <div class="mrf-news">
+    <ol reversed class="mrf-list mrf-list-news">
+        {% for item in newslist | reverse %}
+            {% if loop.index0 < forLimit %}
+                <li>
+                    <a href="{{item.url}}">
+                        <p>{{item.data.title}}</p>
+                        <p class="mrf-published">Published: <datetime>{{item.data.publish | readableDate}}</datetime></p>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</div>

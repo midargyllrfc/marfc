@@ -25,6 +25,12 @@ eleventyNavigation:
   <p class="mrf-centre mrf-mbs-m">Go to the <a href="/gallery/">Gallery</a> to see all photos.</p>
 </article>
 
+<article class="mrf-column-main flow" id="news">
+  <h2>News</h2>
+  {% set newslist = collections.news %}
+  {% include "news-list.njk" %}
+</article>
+
 
 <article class="mrf-column-main mrf-column-main-wide flow" id="documents">
 
