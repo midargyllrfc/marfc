@@ -238,6 +238,14 @@ a[href^="#"]::after {
     margin-block-start: var(--space-m);
 }
 
+.mrf-mbe-l {
+    margin-block-end: var(--space-l) !important;
+}
+
+.mrf-bg-light {
+    background-color: var(--mrf-colour-dark) !important;
+}
+
 /*
  ######  ##    ## #### ########
 ##    ## ##   ##   ##  ##     ##
@@ -460,6 +468,18 @@ article:nth-child(odd) {
 #### ##    ##    ##    ##     ##  #######
 */
 
+.mrf-intro picture {
+    --pg-bg-size: 0.5rem;
+    --pg-bg-position: calc(var(--pg-bg-size) / 2);
+    --pg-bg-alpha: 1;
+
+    background-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, var(--pg-bg-alpha)) 1px,
+            transparent 0), radial-gradient(circle at center, rgba(0, 0, 0, var(--pg-bg-alpha)) 1px, transparent 0);
+    background-size: var(--pg-bg-size) var(--pg-bg-size);
+    background-position: 0 0, var(--pg-bg-position) var(--pg-bg-position);
+}
+
 .mrf-intro img {
     width: 100%;
     height: auto;
@@ -478,6 +498,18 @@ article:nth-child(odd) {
 ##    ##  ##     ## ##       ##       ##       ##    ##     ##
  ######   ##     ## ######## ######## ######## ##     ##    ##
 */
+
+#gallery {
+    --pg-bg-size: 0.5rem;
+    --pg-bg-position: calc(var(--pg-bg-size) / 2);
+    --pg-bg-alpha: 1;
+
+    background-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, var(--pg-bg-alpha)) 1px,
+            transparent 0), radial-gradient(circle at center, rgba(0, 0, 0, var(--pg-bg-alpha)) 1px, transparent 0);
+    background-size: var(--pg-bg-size) var(--pg-bg-size);
+    background-position: 0 0, var(--pg-bg-position) var(--pg-bg-position);
+}
 
 .mrf-gallery {
     display: flex;
@@ -500,6 +532,7 @@ article:nth-child(odd) {
     max-width: 20rem;
     height: auto;
     max-height: 250px;
+    border: 8px solid whitesmoke;
 }
 
 .mrf-gallery a[target="_blank"]::after {
@@ -525,6 +558,11 @@ article:nth-child(odd) {
     padding: var(--space-xs) var(--space-s);
     font-size: var(--font-size-1);
     margin-block-end: var(--space-2xs);
+    text-decoration: none;
+}
+
+.mrf-list-news>li>a:hover {
+    background-color: var(--mrf-colour-dark);
 }
 
 .mrf-list-news>li>a::before {
@@ -653,6 +691,7 @@ footer {
     color: whitesmoke;
     padding: var(--space-xl);
     margin-block-start: var(--space-xl);
+    border-block-start: 10px solid var(--mrf-colour-dark);
     /* gap: var(--space-xs); */
 }
 
