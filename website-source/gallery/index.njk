@@ -6,7 +6,9 @@ eleventyNavigation:
   key: Gallery
   order: 3
 ---
-
-{% set gallerylist = collections.gallery %}
+<article class="mrf-column-main mrf-column-main-wide flow">
+  <h2>Gallery</h2>
+  {% set gallerylist = collections.gallery %}
   {% set galleryprefix = "/gallery/" %} 
   {% include "gallery-list.njk" %}
+  </article>

@@ -457,11 +457,24 @@ article:nth-child(even) {
     gap: var(--space-s);
 }
 
+.mrf-gallery figure {
+    margin: 0;
+}
+
+.mrf-gallery figcaption {
+    margin-block-start: var(--space-2xs);
+    font-size: var(--font-size--2);
+}
+
 .mrf-gallery img {
     width: 100%;
     max-width: 20rem;
     height: auto;
     max-height: 250px;
+}
+
+.mrf-gallery a[target="_blank"]::after {
+    display: none;
 }
 
 /*

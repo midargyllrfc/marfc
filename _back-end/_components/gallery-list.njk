@@ -7,7 +7,10 @@
     {% for photo in gallerylist | reverse %}
         {% if loop.index0 < forLimit %}
         {# <p>{{galleryprefix}}{{ photo.data.photo }}</p> #}
-            <img src="{{galleryprefix}}{{ photo.data.photo }}" alt="{{ photo.data.title }}" loading="lazy">
+            <figure>
+                <a href="{{galleryprefix}}{{ photo.data.photo }}" target="_blank"><img src="{{galleryprefix}}{{ photo.data.photo }}" alt="{{ photo.data.title }}" loading="lazy"></a>
+                <figcaption>{{ photo.data.title }}</figcaption>
+            </figure>
         {% endif %}
     {% endfor %}
 </div>
