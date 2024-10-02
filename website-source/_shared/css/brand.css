@@ -125,8 +125,6 @@ h6 {
 h1 {
     font-size: var(--font-size-5);
     margin-block-end: var(--space-s);
-    /* letter-spacing: -7px;
-    transform: scaleX(1.2); */
 }
 
 h2 {
@@ -313,6 +311,7 @@ a[href^="#"]::after {
     width: 100%;
     max-width: var(--space-3xl);
     margin-block-start: var(--space-2xs);
+    margin-inline-end: var(--space-l);
     fill: var(--mrf-colour-highlight)
 }
 
@@ -349,12 +348,13 @@ nav>ul>li>a:hover {
     background-image: url(../images/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    padding-inline: var(--space-2xs);
 }
 
 .mrf-hero p {
     width: fit-content;
     margin: 0 auto;
-    padding-inline: var(--space-2xs);
+    padding: var(--space-3xs) var(--space-2xs);
     /* padding-block: 2px; */
     line-height: 1.1;
     font-size: var(--font-size-2);
@@ -460,6 +460,8 @@ article:nth-child(even) {
 .mrf-gallery img {
     width: 100%;
     max-width: 20rem;
+    height: auto;
+    max-height: 250px;
 }
 
 /*

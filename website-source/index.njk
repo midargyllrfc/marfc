@@ -15,28 +15,13 @@ eleventyNavigation:
 
 <article  class="mrf-column-main mrf-column-main-full flow"  id="gallery">
   <div class="mrf-column-main"><h2>Gallery</h2></div>
-  <div class="mrf-gallery">
 
-        {# <img src="/_shared/images/gallery/Huddle.jpg" alt="Looking up into the faces of women in a rugby huddle" loading="lazy"> #}
-        
-
-        {# <img src="/_shared/images/gallery/20220827_132700.jpg" alt="ALt text needed" loading="lazy"> #}
-        
-
-        {# <img src="/_shared/images/gallery/DSC_0042.jpeg" alt="ALt text needed" loading="lazy"> #}
-
-         <img src="/_shared/images/gallery/Islay-53-7.jpg" alt="Rugby on Islay" loading="lazy">
-
-        <img src="/_shared/images/gallery/Rugby-Dalriada-Winners-2023.jpg" alt="Rugby Dalriada Winners 2023" loading="lazy">
-
-        <img src="/_shared/images/gallery/Ladies-Team.jpeg" alt="Ladies team" loading="lazy">
-
-        <img src="/_shared/images/gallery/MA-U18-V-Ayr.jpg" alt="Under 18s vs Ayr" loading="lazy">
-
-        <img src="/_shared/images/gallery/Lochgilphead-High.jpg" alt="Lochgilphead High school team" loading="lazy">
+  {% set gallerylist = collections.gallery %}
+  {% set galleryprefix = "/gallery/" %}
+  {% set galleryLimit = 8 %}
+  {% include "gallery-list.njk" %} 
 
 
-  </div>
   <p class="mrf-centre mrf-mbs-m">Go to the <a href="/gallery/">Gallery</a> to see all photos.</p>
 </article>
 

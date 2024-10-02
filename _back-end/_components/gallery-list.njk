@@ -1,0 +1,13 @@
+{% if galleryLimit %}
+    {% set forLimit = galleryLimit %}
+{% else %}
+    {% set forLimit = 100 %}
+{% endif %}
+ <div class="mrf-gallery">
+    {% for photo in gallerylist | reverse %}
+        {% if loop.index0 < forLimit %}
+        {# <p>{{galleryprefix}}{{ photo.data.photo }}</p> #}
+            <img src="{{galleryprefix}}{{ photo.data.photo }}" alt="{{ photo.data.title }}" loading="lazy">
+        {% endif %}
+    {% endfor %}
+</div>

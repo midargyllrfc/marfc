@@ -1,7 +1,12 @@
 ---
 title: "Mid-Argyll Rugby Football Club: gallery"
 layout: base
+override:tags: []
 eleventyNavigation:
   key: Gallery
   order: 3
 ---
+
+{% set gallerylist = collections.gallery %}
+  {% set galleryprefix = "/gallery/" %} 
+  {% include "gallery-list.njk" %}

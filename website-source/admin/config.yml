@@ -43,7 +43,7 @@ collections:
       - { label: "Update Date", name: "update", widget: "datetime", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "gallery"
-    label: "Gallery"
+    label: "Gallery Images"
     folder: "website-source/gallery"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
