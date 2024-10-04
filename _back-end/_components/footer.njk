@@ -1,23 +1,7 @@
 <footer class="mrf-column-main mrf-column-main-full flow" id="footer">
       <h2>Contact</h2>
-      <ul class="mrf-contact" role="list" >
-        <li>
-          <p><strong>Lee Buckley</strong></p>
-          <p>Club Secretary</p>
-          <p>tel: <a href="tel:07483979290">07483979290</a></p>
-        </li>
 
-          <li>
-          <p><strong>James Hill</strong></p>
-          <p>Club Chairman</p>
-          <p>tel: <a href="tel:07881975835">07881975835</a></p>
-        </li>
-
-          <li>
-          <p><strong>Stuart Charnock</strong></p>
-          <p>Child Protection Officer</p>
-          <p>tel: <a href="tel:07867314851">07867314851</a></p>
-        </li>
-      </ul>
+      {% set contactlist = collections.contact %}
+      {% include "contact-list.njk" %} 
 
 </footer>

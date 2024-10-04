@@ -1,0 +1,16 @@
+{% if docsLimit %}
+    {% set forLimit = docsLimit %}
+{% else %}
+    {% set forLimit = 5 %}
+{% endif %}
+    <ul class="mrf-list mrf-documents">
+        {% for item in docslist | reverse %}
+            {% if loop.index0 < forLimit %}
+                <li>
+                    <a download="" href="{{item.url}}">
+                        <p>{{item.data.title}}</p>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>

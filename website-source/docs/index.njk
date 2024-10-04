@@ -9,5 +9,10 @@ eleventyNavigation:
 <article class="mrf-column-main flow mrf-bg-light">
   <h2>Documents</h2>
   <p>Please download, complete and email these forms to admin@mid-argyll-rfc.org to join the club.</p>
+
+ <div class="mrf-mbs-m">
+    {% set docslist = collections.docs %}
+        {% include "docs-list.njk" %} 
+ </div>
 </article>
 

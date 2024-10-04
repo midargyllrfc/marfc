@@ -61,7 +61,7 @@
     --mrf-header-height: 40vh;
     --mrf-header-alpha: 0.05;
 
-    --mrf-colour-dark: #404040;
+    --mrf-colour-dark: #313131;
     --mrf-colour-dark-lowlight: #222;
     --mrf-colour-highlight: #f8bf01;
 }
@@ -580,6 +580,11 @@ article:nth-child(odd) {
     margin: 0;
 }
 
+.mrf-new-page {
+    margin-block-start: var(--space-s);
+    margin-block-end: var(--space-l);
+}
+
 /*
 ########   #######   ######   ######
 ##     ## ##     ## ##    ## ##    ##
@@ -620,6 +625,63 @@ article:nth-child(odd) {
 
 .mrf-documents>li>a p {
     margin: 0;
+}
+
+/*
+ ######   #######  ##    ## ########    ###     ######  ########
+##    ## ##     ## ###   ##    ##      ## ##   ##    ##    ##
+##       ##     ## ####  ##    ##     ##   ##  ##          ##
+##       ##     ## ## ## ##    ##    ##     ## ##          ##
+##       ##     ## ##  ####    ##    ######### ##          ##
+##    ## ##     ## ##   ###    ##    ##     ## ##    ##    ##
+ ######   #######  ##    ##    ##    ##     ##  ######     ##
+*/
+
+
+.mrf-form-contact {
+    margin-block-start: var(--space-l);
+}
+
+.mrf-form-contact>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mrf-form-contact>div:nth-child(2),
+.mrf-form-contact>div:nth-child(3),
+.mrf-form-contact button {
+    margin-block-start: var(--space-s);
+}
+
+.mrf-form-contact label {
+    font-size: var(--font-size-1);
+    font-weight: bold;
+    margin-block-end: var(--space-3xs);
+}
+
+.mrf-form-contact input,
+.mrf-form-contact textarea {
+    padding: var(--space-2xs);
+}
+
+.mrf-form-contact button {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--mrf-colour-highlight);
+    color: var(--mrf-colour-dark);
+    font-size: var(--font-size-2);
+    /* font-weight: bold; */
+    border: 0;
+    padding: var(--space-s);
+    border: 5px solid var(--mrf-colour-dark-lowlight);
+    transition: all 0.2s ease-in-out;
+}
+
+.mrf-form-contact button:hover {
+    background-color: var(--mrf-colour-dark);
+    color: var(--mrf-colour-highlight);
+    border: 5px solid var(--mrf-colour-highlight);
 }
 
 /*

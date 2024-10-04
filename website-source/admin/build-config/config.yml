@@ -2,25 +2,36 @@
 local_backend: false
 backend:
   name: github
-  repo: patrickgrey/website
+  repo: midargyllrfc/marfc
   branch: main # Branch to update (optional; defaults to master)
-  site_domain: https://patrickgrey.co.uk
-  base_url: https://patrickgrey.co.uk
-  auth_endpoint: /api/auth
   commit_messages:
   create: Create {{collection}} "{{slug}}"
   update: Update {{collection}} "{{slug}}"
   delete: Delete {{collection}} "{{slug}}"
   uploadMedia: Upload "{{path}}"
   deleteMedia: Delete "{{path}}"
-media_folder: "_shared/uploads"
-site_url: "https://patrickgrey.co.uk"
-logo_url: "https://patrickgrey.co.uk/_shared/images/logo/pg-logo-01.svg"
+media_folder: "website-source/_shared/uploads"
+public_folder: "_shared/uploads"
+site_url: "https://mid-argyll-rfc.org"
+logo_url: "https://mid-argyll-rfc.org/_shared/images/logo/marfc-logo.svg"
 search: false
 collections:
-  - name: "notes"
-    label: "Notes"
-    folder: "website-source/notes"
+  - label: "Pages"
+    name: "pages"
+    extension: "json"
+    format: "json"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "website-source/index.json"
+        extension: "json"
+        format: "json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+  - name: "news"
+    label: "News"
+    folder: "website-source/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
@@ -32,3 +43,39 @@ collections:
       - { label: "Publish Date", name: "publish", widget: "datetime" }
       - { label: "Update Date", name: "update", widget: "datetime", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "gallery"
+    label: "Gallery Images"
+    folder: "website-source/gallery"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", media_folder: "images", public_folder: "images" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft?", name: "draft", widget: "boolean", default: false }
+  - name: "docs"
+    label: "Documents"
+    folder: "website-source/docs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Draft?", name: "draft", widget: "boolean", default: false }
+      - { label: "Publish Date", name: "publish", widget: "datetime" }
+      - { label: "Update Date", name: "update", widget: "datetime", required: false }
+      - { label: "Document", name: "docfile", widget: "file", choose_url: false, media_folder: "uploads"  }
+  - name: "contact"
+    label: "Contact"
+    folder: "website-source/contact"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Contact name", name: "contactName", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Telephone number", name: "tel", widget: "string" }

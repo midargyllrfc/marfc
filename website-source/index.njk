@@ -30,7 +30,7 @@ eleventyNavigation:
   {% include "gallery-list.njk" %} 
 
 
-  <p class="mrf-centre mrf-mbs-m">Go to the <a href="/gallery/">Gallery</a> to see all photos.</p>
+  <p class="mrf-centre mrf-mbs-m"><a href="/gallery/">See all photos</a></p>
 </article>
 
 
@@ -40,43 +40,9 @@ eleventyNavigation:
 
       <div class="mrf-column-main"><h2>Documents</h2></div>
 
-      <ul class="mrf-list mrf-documents">
-        
-        <li>
-          <a download href="/_shared/docs/MARFC-parent-letter-2023-24.pdf">
-            
-            <p>Letter to parents 2023-2024</p>
-          </a>
-        </li>
+      {% set docslist = collections.docs %}
+      {% include "docs-list.njk" %} 
 
-        <li>
-          <a download href="/_shared/docs/Membership-form-23-24.pdf">
-            
-            <p>Membership form 2023-2024</p>
-          </a>
-        </li>
-
-        <li>
-          <a download href="/_shared/docs/Mid-Argyll-Rugby-Club-Consent-Form-2023.pdf">
-            
-            <p>Consent form 2023-2024</p>
-          </a>
-        </li>
-        
-        <li>
-          <a download href="/_shared/docs/MARFC-Code-of-Conduct.pdf">
-            
-            <p>Code of conduct</p>
-          </a>
-        </li>
-
-        <li>
-          <a download href="/_shared/docs/Constitution-April-2022.pdf">
-            
-            <p>Constitution</p>
-          </a>
-        </li>
-      </ul>
 
 </article>
 

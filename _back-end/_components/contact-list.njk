@@ -1,0 +1,9 @@
+    <ul class="mrf-contact" role="list">
+        {% for item in contactlist %}
+            <li>
+                <p><strong>{{item.data.contactName}}</strong></p>
+                <p>{{item.data.position}}</p>
+                <p>tel: <a href="tel:{{item.data.tel}}">{{item.data.tel}}</a></p>
+            </li>
+        {% endfor %}
+    </ul>
