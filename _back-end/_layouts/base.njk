@@ -29,20 +29,20 @@ jsFiles: []
         <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
         <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
-        {% if env === 'dev' %}
+        {# {% if env === 'dev' %} #}
             <link rel="stylesheet" href="/_shared/css/reset.css">
             <link rel="stylesheet" href="/_shared/css/brand.css">
             <link rel="stylesheet" href="/_shared/css/shared.css">
-        {% else %}
+        {# {% else %}
             {% set css %}
-            {% include "/_shared/css/reset.css" %}
-            {% include "/_shared/css/brand.css" %}
-            {% include "/_shared/css/shared.css" %}
+            {% include "../../website-source/_shared/css/reset.css" %}
+            {% include "../..//website-source/_shared/css/brand.css" %}
+            {% include "../..//website-source/_shared/css/shared.css" %}
             {% endset %}
             <style>
                 {{css | cssmin | safe}}
             </style>
-        {% endif %}
+        {% endif %} #}
 
         {% for file in cssFiles %}
             <link rel="stylesheet" href="{{file}}">
@@ -131,7 +131,7 @@ jsFiles: []
 
         {% if env != 'dev' %}
             {% set js %}
-            {% include "/_shared/js/shared.js" %}
+            {% include "../../website-source/_shared/js/shared.js" %}
             {% endset %}
             <script>
                 {{js | jsmin | safe}}
