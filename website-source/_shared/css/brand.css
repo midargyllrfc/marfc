@@ -347,6 +347,7 @@ nav>ul {
 nav>ul>li {
     /* display: inline-block; */
     /* gap: var(--space-2xs); */
+    line-height: 1.2;
 }
 
 nav>ul>li>a {
