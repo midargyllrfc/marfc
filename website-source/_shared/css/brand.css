@@ -362,6 +362,7 @@ nav>ul>li>a:hover {
 }
 
 .mrf-hero {
+    position: relative;
     height: var(--mrf-header-height);
     background-color: var(--mrf-colour-highlight);
     color: var(--mrf-colour-dark);
@@ -369,10 +370,20 @@ nav>ul>li>a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url(../images/hero.jpg);
+    /* background-image: url(../images/hero.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     padding-inline: var(--space-2xs);
+}
+
+.mrf-hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 100;
 }
 
 .mrf-hero p {
@@ -383,6 +394,11 @@ nav>ul>li>a:hover {
     line-height: 1.1;
     font-size: var(--font-size-2);
     background-color: var(--mrf-colour-highlight);
+
+}
+
+.mrf-hero>div {
+    z-index: 200;
 }
 
 /*

@@ -20,12 +20,10 @@ jsFiles: []
         <title>{{ title | striptags(false) }}</title>
         <meta name="description" content="{{ description or metadata.description }}">
         <meta name="generator" content="{{ eleventy.generator }}">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#f8bf01">
 
         <link rel="icon" type="image/svg+xml" href="/_shared/favicons/favicon.svg">
         <link rel="icon" type="image/png" href="/_shared/favicons/favicon.png">
-
-        <link rel="preload" as="image" href="/_shared/images/hero.jpg" />
 
         {#- Atom and JSON feeds included by default #}
         <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -114,6 +112,7 @@ jsFiles: []
 
                     {# <img class="mrf-hero-img" src="/_shared/images/splash-3.jpg" alt="Mens rugby"> #}
                 <div class="mrf-hero">
+                    <img class="mrf-hero-img" src="/_shared/images/hero.png" alt="A ruck at mens rugby">
                     <div>
                         <h1>Mid&#8209;Argyll Rugby</h1>
                         <p>A community run club for&nbsp;all&nbsp;ages.</p>

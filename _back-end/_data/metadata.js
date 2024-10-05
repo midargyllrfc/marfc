@@ -1,10 +1,11 @@
 export default {
-    title: "Patrick Grey: breaking the internet, one page at a time...",
-    url: "https://patrickgrey.co.uk/",
+    title: "Mid-Argyll Rugby Football Club",
+    url: "https://mid-argyll-fc.org/",
     language: "en",
-    description: "A web developer in Scotland.",
+    description: "A community run club for all ages.",
     author: {
         name: "Patrick Grey",
-        email: "websemantic@yahoo.co.uk"
+        email: "hi@risingsky.co.uk",
+        website: "https://risingsky.co.uk"
     }
 }
